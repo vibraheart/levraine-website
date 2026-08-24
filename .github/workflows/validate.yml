@@ -1,0 +1,33 @@
+name: Validate static site
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f script.js
+          test -f privacy.html
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f _headers
+          test -f _redirects
+      - name: Check for accidentally committed secrets
+        run: |
+          if grep -RniE '(client_secret|refresh_token|access_token|BEGIN PRIVATE KEY)' . --exclude-dir=.git --exclude='validate.yml'; then
+            echo 'Potential secret detected. Remove it before publishing.'
+            exit 1
+          fi
+      - name: Reject production placeholders
+        run: |
+          if grep -RniE '(REPLACE_WITH_YOUR_EMAIL|ADD YOUR HERO IMAGE|PRODUCT IMAGE [0-9]|example\.com|YOUR_[A-Z_]+)' . --exclude-dir=.git --exclude='validate.yml'; then
+            echo 'Production placeholder found.'
+            exit 1
+          fi
