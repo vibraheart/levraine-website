@@ -7,7 +7,7 @@ Designed for deployment on **Cloudflare Pages** with `levraine.com` registered a
 ## Before publishing
 
 1. Confirm product claims and dimensions in `index.html` are current.
-2. Confirm `contact@levraine.com` is monitored.
+2. Confirm `info@levraine.com` is monitored.
 3. Review `privacy.html` for any required policy updates.
 
 ## Cloudflare Pages settings
