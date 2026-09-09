@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy | LEVRAINE</title>
-  <meta name="description" content="Privacy information for LEVRAINE and Marship Vibraheart Inc." />
+  <meta name="description" content="How Marship Vibraheart Inc. handles information for LEVRAINE and its internal Vibraheart AI — Amazon Ads application." />
+  <link rel="canonical" href="https://levraine.com/privacy" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231a1a1a%22/><text x=%2250%22 y=%2264%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-family=%22Arial%22>L</text></svg>" />
   <link rel="stylesheet" href="styles.css?v=20260824" />
 </head>
@@ -18,35 +19,55 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container narrow">
         <p class="eyebrow">Privacy</p>
         <h1 style="font-size:clamp(44px,7vw,72px);">Privacy Policy</h1>
-        <p class="lead">This website is operated by Marship Vibraheart Inc. for the LEVRAINE brand.</p>
+        <p class="lead">LEVRAINE is a brand operated by Marship Vibraheart Inc., a Canadian e-commerce company. This notice covers our website and our internal Vibraheart AI — Amazon Ads application in AI Company OS.</p>
 
-        <h3>Information collected</h3>
+        <h3>Website visitors</h3>
         <p>This website does not intentionally collect personal information through forms, user accounts, or tracking scripts. Standard technical information such as IP addresses, browser type, and access logs may be processed by our web hosting provider for security, reliability, and server operation.</p>
 
         <h3>Contact by email</h3>
         <p>If you contact us by email, we may retain the information you provide in order to respond to your inquiry and maintain business records where appropriate.</p>
 
+        <h3>Our internal Amazon Ads application</h3>
+        <p>Vibraheart AI — Amazon Ads is for Marship Vibraheart Inc.'s own advertising accounts and brands. It is not an agency service or software offered to unrelated advertisers. Visiting this website does not connect your Amazon account or give the application access to it.</p>
+        <p>An authorized company user connects the application through Login with Amazon. Amazon handles the user's login and any multi-factor authentication; our application does not ask for their Amazon password or authentication code. Amazon supplies authorization tokens so the backend can make permitted API requests.</p>
+        <p>The application is designed to retrieve advertising profile identifiers, account and marketplace information, currency, campaign information, and advertising reports containing metrics such as impressions, clicks, spend and attributed purchases or sales. These are used for internal performance reporting, analysis and decisions about our own advertising activity. This integration does not request buyer names, delivery addresses or payment-card details.</p>
+        <p>The Amazon permission <strong>advertising::campaign_management</strong> supports advertising-data access and campaign management. Initial onboarding and verification use read-only operations; the company's current reporting connector does not expose campaign changes. Any later campaign changes require separate company authorization. Amazon Ads authorization is separate from Selling Partner API authorization.</p>
+
+        <h3>Where application information is handled</h3>
+        <p>The public LEVRAINE website is a static website hosted through Cloudflare Pages. It does not store Amazon Ads credentials or advertising reports. The internal connector runs in the company's backend environment, separately from this website.</p>
+        <p>The connector accepts application credentials and refresh tokens through backend environment configuration and keeps short-lived access tokens in process memory. Its request logging records operation names, response status and retry attempts rather than authentication headers or response bodies. Ads and Selling Partner credentials use separate configurations.</p>
+        <p>The Ads connection is being onboarded. Its approved configuration uses the private AI Company OS repository's GitHub environment secrets for persistent credentials, with secure local secret-manager injection available for a local backend. This describes the intended connection being established, not a claim that a live connection or production cloud service is already operating. Credentials and advertising information are not published with this website.</p>
+
+        <h3>Retention, disconnection and deletion</h3>
+        <p>Amazon account access can be revoked through Amazon's Login with Amazon account controls. Revocation prevents future access using that authorization; it does not automatically delete information already received by the company. Short-lived access tokens cached by the connector are discarded when its process ends and renewed as needed while authorization remains valid.</p>
+        <p>We review and delete company-held information manually as needed, taking account of its continuing business purpose and applicable obligations. There is no fixed retention period or scheduled deletion service for saved Ads reports or credentials in the current connector. Requests to review or delete information are handled through the monitored privacy contact below. Copies held by service providers are also subject to their own applicable retention and deletion processes.</p>
+
         <h3>Third-party services</h3>
         <p>Our hosting, domain, email, or marketplace providers may process information under their own privacy policies. We do not sell personal information.</p>
+        <p>Cloudflare delivers this website, Amazon provides login and advertising API services, and GitHub provides the approved backend secret-storage configuration. These services may process information outside Canada. The initial Ads authorization and read-only verification do not send advertising reports to an AI model. This notice will be reviewed before additional uses or service-provider transfers are introduced.</p>
 
         <h3>Changes</h3>
-        <p>We may update this policy as our website and operations evolve.</p>
+        <p>We may update this policy as our website and operations evolve. Updates will be published on this page with the revised date.</p>
 
         <h3>Contact</h3>
-        <p>For privacy questions, contact: <a href="mailto:info@levraine.com"><strong>info@levraine.com</strong></a></p>
+        <p>For privacy questions or requests to access, correct or delete information held by Marship Vibraheart Inc., contact <a href="mailto:info@levraine.com"><strong>info@levraine.com</strong></a>. Please describe your request without including passwords or authorization tokens. We may need to verify your authority to request information about a company account.</p>
 
-        <p class="fine-print" style="margin-top:48px;">Last updated: August 24, 2026.</p>
+        <p class="fine-print" style="margin-top:48px;">Last updated: September 8, 2026.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© 2026 Marship Vibraheart Inc. All rights reserved.</p></div>
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="index.html">LEVRAINE</a><p>A brand operated by Marship Vibraheart Inc.</p></div>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="index.html#company">Company</a><a href="index.html#contact">Contact</a></nav>
+      <p class="copyright">© 2026 Marship Vibraheart Inc. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
