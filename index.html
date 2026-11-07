@@ -15,12 +15,49 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Marship Vibraheart Inc.",
-  "brand": { "@type": "Brand", "name": "LEVRAINE" },
-  "url": "https://levraine.com/",
-  "email": "info@levraine.com",
-  "areaServed": "CA"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://levraine.com/#org",
+      "name": "Marship Vibraheart Inc.",
+      "url": "https://levraine.com/",
+      "email": "info@levraine.com",
+      "address": { "@type": "PostalAddress", "addressCountry": "CA" },
+      "brand": { "@id": "https://levraine.com/#brand" }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://levraine.com/#brand",
+      "name": "LEVRAINE",
+      "alternateName": "The Levraine",
+      "url": "https://levraine.com/"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://levraine.com/#bread-bags",
+      "name": "LEVRAINE Beeswax Bread Bags for Sourdough, 2 Pack XL, Removable Liners",
+      "description": "A set of two XL reusable bread bags with a linen-blend outer and a removable liner of 100% cotton coated in 100% beeswax. Roll the top and clip the strap to close. For the counter or the freezer.",
+      "brand": { "@id": "https://levraine.com/#brand" },
+      "manufacturer": { "@id": "https://levraine.com/#org" },
+      "sku": "LEV-BAG-ESD-01",
+      "mpn": "LEV-BAG-ESD-01",
+      "image": ["https://levraine.com/assets/img/bag-set.webp", "https://levraine.com/assets/img/liner-lifts-out.webp"],
+      "material": "Linen blend outer; 100% cotton liner coated in 100% beeswax",
+      "size": "42 x 33 cm (16.5 x 13 in)",
+      "url": "https://levraine.com/",
+      "sameAs": ["https://www.amazon.ca/dp/B0H5FXR8X4", "https://www.amazon.com/dp/B0H5FXR8X4"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What size are LEVRAINE bread bags?", "acceptedAnswer": { "@type": "Answer", "text": "Each bag measures 42 x 33 cm (16.5 x 13 in) laid flat, before rolling. That fits a round sourdough loaf or a pair of baguettes. Each set has two bags." } },
+        { "@type": "Question", "name": "What are the bags made of?", "acceptedAnswer": { "@type": "Answer", "text": "The outer bag is a linen blend. The liner is 100% cotton coated in 100% beeswax, and it lifts out." } },
+        { "@type": "Question", "name": "Can I keep bread in the freezer in it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The bags are made for the counter or the freezer, so one bag can hold today's loaf while the other waits in the freezer." } },
+        { "@type": "Question", "name": "How do I clean a beeswax bread bag?", "acceptedAnswer": { "@type": "Answer", "text": "Lift the liner out and shake out the crumbs. Rinse the liner in cold water, keep it away from heat, and let it air dry." } },
+        { "@type": "Question", "name": "Where can I buy LEVRAINE bread bags?", "acceptedAnswer": { "@type": "Answer", "text": "On Amazon.ca in Canada and Amazon.com in the United States, under ASIN B0H5FXR8X4." } }
+      ]
+    }
+  ]
 }
 </script>
 <style>
@@ -144,6 +181,18 @@ header.top .right { justify-self: end; }
 @media (min-width: 900px) { .care .in { grid-template-columns: 1fr 1.6fr; align-items: baseline; } }
 .care p { margin: 0; font-family: var(--serif); font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem); line-height: 1.4; max-width: 34ch; }
 
+/* Questions */
+.faq .in { padding-block: clamp(80px, 11vw, 150px) 0; display: grid; gap: clamp(28px, 4vw, 64px); }
+@media (min-width: 900px) { .faq .in { grid-template-columns: 1fr 1.4fr; } }
+.qa { border-top: 1px solid var(--hair); }
+.qa details { border-bottom: 1px solid var(--hair); }
+.qa summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 56px; padding: 12px 0; font-family: var(--serif); font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); line-height: 1.3; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; font-family: var(--sans); color: var(--wheat); font-size: 1.25rem; flex: none; }
+.qa details[open] summary::after { content: "–"; }
+.qa details p { margin: 0 0 20px; color: var(--muted); max-width: 60ch; }
+.qa a { color: var(--brown); }
+
 /* The house (company details stay on this page: the Amazon Ads application review refers to them) */
 .house .in { padding-block: clamp(80px, 11vw, 150px); display: grid; gap: clamp(32px, 5vw, 72px); }
 @media (min-width: 900px) { .house .in { grid-template-columns: 1fr 1.4fr; } }
@@ -180,7 +229,7 @@ footer.end nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
 
 <header class="top">
   <div class="in">
-    <nav class="left caps" aria-label="Primary"><a href="#bag">The bag</a><a href="#ritual">How it works</a><a href="#company">Company</a></nav>
+    <nav class="left caps" aria-label="Primary"><a href="#bag">The bag</a><a href="#ritual">How it works</a><a href="#questions">Questions</a></nav>
     <a class="home" href="#main" aria-label="The Levraine, home"><svg class="logo" viewBox="0 0 440.23 185.61" role="img" aria-label="The Levraine, sourdough goods and provisions, established 2026"><use href="#lv-logo"/></svg></a>
     <nav class="right caps" aria-label="Shop"><a href="https://www.amazon.ca/dp/B0H5FXR8X4" rel="noopener" target="_blank">Amazon.ca</a><a href="https://www.amazon.com/dp/B0H5FXR8X4" rel="noopener" target="_blank">Amazon.com</a></nav>
   </div>
@@ -278,6 +327,22 @@ footer.end nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
     <div class="in">
       <span class="caps" style="color:var(--wheat)">Care</span>
       <p>Lift the liner out and shake away the crumbs. Rinse the liner in cold water, keep it away from heat, and let it dry in the open air.</p>
+    </div>
+  </section>
+
+  <section class="faq" id="questions" aria-labelledby="faq-h">
+    <div class="in">
+      <div class="rise">
+        <span class="caps" style="color:var(--wheat)">Questions</span>
+        <h2 class="section-h" id="faq-h">Before you choose.</h2>
+      </div>
+      <div class="qa rise">
+        <details><summary>What size are LEVRAINE bread bags?</summary><p>Each bag measures 42 × 33 cm (16.5 × 13 in) laid flat, before rolling. That fits a round sourdough loaf or a pair of baguettes. Each set has two bags.</p></details>
+        <details><summary>What are the bags made of?</summary><p>The outer bag is a linen blend. The liner is 100% cotton coated in 100% beeswax, and it lifts out.</p></details>
+        <details><summary>Can I keep bread in the freezer in it?</summary><p>Yes. The bags are made for the counter or the freezer, so one bag can hold today’s loaf while the other waits in the freezer.</p></details>
+        <details><summary>How do I clean a beeswax bread bag?</summary><p>Lift the liner out and shake out the crumbs. Rinse the liner in cold water, keep it away from heat, and let it air dry.</p></details>
+        <details><summary>Where can I buy LEVRAINE bread bags?</summary><p>On <a href="https://www.amazon.ca/dp/B0H5FXR8X4" rel="noopener" target="_blank">Amazon.ca</a> in Canada and <a href="https://www.amazon.com/dp/B0H5FXR8X4" rel="noopener" target="_blank">Amazon.com</a> in the United States.</p></details>
+      </div>
     </div>
   </section>
 
