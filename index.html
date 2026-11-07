@@ -202,6 +202,12 @@ header.top .right { justify-self: end; }
 .facts div { display: grid; grid-template-columns: 11rem 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--hair); }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; }
+.ops { grid-column: 1 / -1; padding-top: clamp(24px, 4vw, 48px); }
+.ops-h { font-family: var(--serif, Georgia, serif); font-weight: 400; font-size: clamp(1.4rem, 3vw, 2rem); margin: 14px 0 28px; }
+.ops-grid { display: grid; gap: 0 32px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid var(--hair); }
+.ops-grid div { padding: 20px 0; border-bottom: 1px solid var(--hair); }
+.ops-grid h4 { margin: 0 0 8px; font-weight: 500; font-size: 1.05rem; }
+.ops-grid p { margin: 0; max-width: 34ch; color: var(--muted); }
 @media (max-width: 520px) { .facts div { grid-template-columns: 1fr; gap: 2px; } }
 
 /* Contact */
@@ -365,6 +371,16 @@ footer.end nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
           <div><dt>Business</dt><dd>E-commerce & consumer products</dd></div>
         </dl>
       </div>
+      <div class="ops rise">
+        <span class="caps" style="color:var(--wheat)">How we operate</span>
+        <h3 class="ops-h">Building products and operating them with care.</h3>
+        <div class="ops-grid">
+          <div><h4>Product Development</h4><p>Product research, refinement, materials, packaging and customer feedback.</p></div>
+          <div><h4>E-commerce Operations</h4><p>Marketplace listings, fulfillment, inventory monitoring and ongoing account operations.</p></div>
+          <div><h4>Advertising &amp; Growth</h4><p>Keyword research, campaign analysis, performance monitoring and advertising optimization for our own brands.</p></div>
+          <div><h4>Internal Technology</h4><p>Internal reporting and automation tools supporting advertising, inventory and operational decision-making.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -378,6 +394,7 @@ footer.end nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
     <button class="copy-btn" id="copy-email" type="button">Copy address</button>
     <div class="acts" style="justify-content:center"><a class="btn solid caps" href="https://www.amazon.ca/dp/B0H5FXR8X4" rel="noopener" target="_blank">Shop Amazon.ca (Canada)</a><a class="btn ghost caps" href="https://www.amazon.com/dp/B0H5FXR8X4" rel="noopener" target="_blank">Shop Amazon.com (US)</a></div>
     <footer class="end caps">
+      <span>A brand operated by Marship Vibraheart Inc.</span>
       <span>© <span id="year">2026</span> Marship Vibraheart Inc.</span>
       <nav aria-label="Footer"><a href="https://www.instagram.com/levraine.ca/" rel="noopener" target="_blank">Instagram</a><a href="/products/beeswax-bread-bags/">The bag</a><a href="/guides/how-to-store-sourdough-bread/">Storing sourdough</a><a href="privacy.html">Privacy Policy</a><a href="#company">Company</a><span>Designed in Canada</span></nav>
     </footer>
